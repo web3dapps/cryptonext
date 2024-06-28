@@ -11,10 +11,11 @@ export async function fetchAssets() {
     if (!response.ok) {
       throw new Error('Failed to fetch cryptocurrency data');
     }
-  
+
+    
     const data = await response.json();
     console.log(data);
-  
+
     return data.map(coin => ({
       id: coin.id,
       name: coin.name,
